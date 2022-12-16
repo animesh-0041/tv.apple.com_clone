@@ -18,6 +18,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 5px 30px;
+    /* position: sticky; */
 
   
   
@@ -507,6 +508,8 @@ border: 1px solid red;
   font-size: .8rem;
   position: sticky;
   bottom: 0px;
+  z-index: 11;
+  padding-bottom: 0;
 
 }
 #strat-free-trial>:nth-child(1)>p{
