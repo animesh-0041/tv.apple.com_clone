@@ -1,88 +1,130 @@
-function scroll(){
-const carousel = document.querySelector(".carousele"),
-  firstImg = carousel.querySelectorAll("img")[0],
-  arrowIcons = document.querySelectorAll(".wrapper i");
 
-let isDragStart = false,
-  isDragging = false,
-  prevPageX,
-  prevScrollLeft,
-  positionDiff;
+imageSlidergrid();
+function imageSlidergrid(){
+    document.addEventListener("click", (e) => {
+      let handle;
+      if (e.target.matches(".handle")) {
+        handle = e.target;
+      } else {
+        handle = e.target.closest(".handle");
+      }
+      if (handle != null) onHandleClick(handle);
+    });
 
-const showHideIcons = () => {
-  // showing and hiding prev/next icon according to carousel scroll left value
-  let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-  arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-  arrowIcons[1].style.display =
-    carousel.scrollLeft == scrollWidth ? "none" : "block";
-};
+    const throttleProgressBar = throttle(() => {
+      document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
+    }, 250);
+    window.addEventListener("resize", throttleProgressBar);
 
-arrowIcons.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
-    // if clicked icon is left, reduce width value from the carousel scroll left else add to it
-    carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-    setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
-  });
-});
+    document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
 
-const autoSlide = () => {
-  // if there is no image left to scroll then return from here
-  if (
-    carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 ||
-    carousel.scrollLeft <= 0
-  )
-    return;
+    function calculateProgressBar(progressBar) {
+      progressBar.innerHTML = "";
+      const slider = progressBar.closest(".row").querySelector(".slider");
+      const itemCount = slider.children.length;
+      const itemsPerScreen = parseInt(
+        getComputedStyle(slider).getPropertyValue("--items-per-screen")
+      );
+      let sliderIndex = parseInt(
+        getComputedStyle(slider).getPropertyValue("--slider-index")
+      );
+      const progressBarItemCount = Math.ceil(itemCount / itemsPerScreen);
 
-  positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-  let firstImgWidth = firstImg.clientWidth + 14;
-  // getting difference value that needs to add or reduce from carousel left to take middle img center
-  let valDifference = firstImgWidth - positionDiff;
+      if (sliderIndex >= progressBarItemCount) {
+        slider.style.setProperty("--slider-index", progressBarItemCount - 1);
+        sliderIndex = progressBarItemCount - 1;
+      }
 
-  if (carousel.scrollLeft > prevScrollLeft) {
-    // if user is scrolling to the right
-    return (carousel.scrollLeft +=
-      positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
+      for (let i = 0; i < progressBarItemCount; i++) {
+        const barItem = document.createElement("div");
+        barItem.classList.add("progress-item");
+        if (i === sliderIndex) {
+          barItem.classList.add("active");
+        }
+        progressBar.append(barItem);
+      }
+    }
+
+    function onHandleClick(handle) {
+      const progressBar = handle.closest(".row").querySelector(".progress-bar");
+      const slider = handle.closest(".container").querySelector(".slider");
+      const sliderIndex = parseInt(
+        getComputedStyle(slider).getPropertyValue("--slider-index")
+      );
+      const progressBarItemCount = progressBar.children.length;
+      if (handle.classList.contains("left-handle")) {
+        if (sliderIndex - 1 < 0) {
+          slider.style.setProperty("--slider-index", progressBarItemCount - 1);
+          progressBar.children[sliderIndex].classList.remove("active");
+          progressBar.children[progressBarItemCount - 1].classList.add(
+            "active"
+          );
+        } else {
+          slider.style.setProperty("--slider-index", sliderIndex - 1);
+          progressBar.children[sliderIndex].classList.remove("active");
+          progressBar.children[sliderIndex - 1].classList.add("active");
+        }
+      }
+
+      if (handle.classList.contains("right-handle")) {
+        if (sliderIndex + 1 >= progressBarItemCount) {
+          slider.style.setProperty("--slider-index", 0);
+          progressBar.children[sliderIndex].classList.remove("active");
+          progressBar.children[0].classList.add("active");
+        } else {
+          slider.style.setProperty("--slider-index", sliderIndex + 1);
+          progressBar.children[sliderIndex].classList.remove("active");
+          progressBar.children[sliderIndex + 1].classList.add("active");
+        }
+      }
+    }
+
+    function throttle(cb, delay = 1000) {
+      let shouldWait = false;
+      let waitingArgs;
+      const timeoutFunc = () => {
+        if (waitingArgs == null) {
+          shouldWait = false;
+        } else {
+          cb(...waitingArgs);
+          waitingArgs = null;
+          setTimeout(timeoutFunc, delay);
+        }
+      };
+
+      return (...args) => {
+        if (shouldWait) {
+          waitingArgs = args;
+          return;
+        }
+
+        cb(...args);
+        shouldWait = true;
+        setTimeout(timeoutFunc, delay);
+      };
+    }
+ 
   }
-  // if user is scrolling to the left
-  carousel.scrollLeft -=
-    positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-};
 
-const dragStart = (e) => {
-  // updatating global variables value on mouse down event
-  isDragStart = true;
-  prevPageX = e.pageX || e.touches[0].pageX;
-  prevScrollLeft = carousel.scrollLeft;
-};
 
-const dragging = (e) => {
-  // scrolling images/carousel to left according to mouse pointer
-  if (!isDragStart) return;
-  e.preventDefault();
-  isDragging = true;
-  carousel.classList.add("dragging");
-  positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-  carousel.scrollLeft = prevScrollLeft - positionDiff;
-  showHideIcons();
-};
 
-const dragStop = () => {
-  isDragStart = false;
-  carousel.classList.remove("dragging");
 
-  if (!isDragging) return;
-  isDragging = false;
-  autoSlide();
-};
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
-
-document.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
-
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("touchend", dragStop);
+//faq javascrip here
+faq();
+function faq(){
+ 
+  let accordioItemHeader = document.querySelectorAll(
+    ".accordion-item-header"
+  );
+  accordioItemHeader.forEach((accordioItemHeader) => {
+    accordioItemHeader.addEventListener("click", (event) => {
+      accordioItemHeader.classList.toggle("active");
+      const accordionItemBody = accordioItemHeader.nextElementSibling;
+      if (accordioItemHeader.classList.contains("active")) {
+        accordionItemBody.style = accordionItemBody.scrollHeight + "px";
+      } else {
+        accordionItemBody.style.maxHeight = 0;
+      }
+    });
+  });
 }
-scroll();
