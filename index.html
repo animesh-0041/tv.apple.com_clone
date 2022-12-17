@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="style/index.css" />
   </head>
   <body>
+    <div class="over-lap"></div>
     <nav>
       <a href="./index.html">
         <img src="globe tv2.png" alt="" width="200px" />
@@ -30,7 +31,7 @@
 
       <div>
         <a href="search.html"><input type="text" placeholder="Search" /></a>
-        <button><i class="fa fa-user icon"></i>Sign In</button>
+        <button id="sign-in-btn"><i class="fa fa-user icon"></i>Sign In</button>
       </div>
     </nav>
 
@@ -57,7 +58,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/bb/2c/ae/bb2cae80-b4e9-7193-8a4f-fb1129ad59ca/278c3382-c095-47b3-ba19-d82887d8b13a.png/1679x945sr.jpg"
+            src="https://is5-ssl.mzstatic.com/image/thumb/lgskq6n1xkUI5DOyA5tWWQ/738x416.webp"
             class="d-block w-100"
             alt="..."
           />
@@ -70,7 +71,20 @@
         </div>
         <div class="carousel-item">
           <img
-            src="https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/bb/2c/ae/bb2cae80-b4e9-7193-8a4f-fb1129ad59ca/278c3382-c095-47b3-ba19-d82887d8b13a.png/1679x945sr.jpg"
+            src="https://is3-ssl.mzstatic.com/image/thumb/EuF6BWsgBeic_Ap2qeAGBQ/738x416.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+          <!-- <div class="side-div">
+            <h1>The Home of Apple Originals3</h1>
+            <p>Enjoy star-studded, award-wining series,films, and more.</p>
+            <button>Start Free Trial</button>
+            <p>7 days free then $6.99/month</p>
+          </div> -->
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Tb1jarRHaWN_SFiMjZcDHw/738x416.webp"
             class="d-block w-100"
             alt="..."
           />
@@ -146,7 +160,6 @@
             <img
               src="https://is4-ssl.mzstatic.com/image/thumb/XiXPs1AKOFQE7cq7AVlJeQ/738x416.webp"
             />
-            
           </div>
         </div>
         <button class="handle right-handle">
@@ -545,20 +558,101 @@
         </p>
       </div>
       <div>
-        <button>Start Free Trial</button>
+        <button id="strat-free-trial-btn">Start Free Trial</button>
         <p>7 days free, then $6.99/month.</p>
       </div>
     </div>
 
     <!-- sign in form -->
 
- 
+    <div class="sign-in-form-container">
+      <span id="close">&times;</span>
+      <div>
+        <img src="globe tv2.png" alt="" />
+        <h2>Sign in with your Apple ID</h2>
+        <p>You will be signed in to Apple TV and Apple Music</p>
+        <input type="email" placeholder="Apple ID" />
+        <div>
+          <div>
+            <a href="">Create New Apple ID ></a>
+          </div>
+          <div>
+            <a href="">Forgot Apple ID or Password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- sign up free trial -->
 
-
-
-
+    <div class="sign-up-form-container">
+      <span id="close2">&times;</span>
+      <div>
+        <img src="globe tv2.png" alt="" />
+        <h2>Sign in with your Apple ID or create a new one</h2>
+        <p>7 days free,then $6.99/month. New subscribers only</p>
+        <p>
+          Your Apple ID information is used to allow you to sign in securely and
+          access your data. Apple records certain data for security, support,
+          and reporting purposes. If you agree, Apple may also use your Apple ID
+          information to send you marketing emails and communications, including
+          based on your use of Apple services.
+          <a href="">See how your data is managed...</a>
+        </p>
+        <div class="subtn">
+          <div><a href=""></a><button>sign In</button></div>
+          <div><a href=""></a><button id="create-account">Create</button></div>
+        </div>
+        <a href="">Not Now</a>
+      </div>
+    </div>
   </body>
+
+  <!-- create apple id -->
+
+  <div class="create-apple-id-container">
+    <span id="close3">&times;</span>
+    <div>
+      <h2>create Apple ID</h2>
+      <input type="email" placeholder="name@example.com" required />
+      <p>This email address will become your Apple ID</p>
+      <input type="password" placeholder="password" required />
+      <p>
+        Your password must have 8 or more characters, upper and lowercase
+        letters, and at least one number.
+      </p>
+      <input type="text" placeholder="First Name" required />
+      <input type="text" placeholder="Last Name" required />
+      <input type="date" placeholder="Birthday" required />
+      <select name="" id="country">
+        <option value="india">India</option>
+        <option value="us">United States</option>
+        <option value="france">France</option>
+        <option value="rusia">Rusia</option>
+        <option value="china">China</option>
+      </select>
+    </div>
+    <div>
+      <input type="checkbox" required />
+      <label for="">Apple Updates</label>
+      <p>
+        Receive Apple emails and communications including new releases,
+        exclusive content, special offers, and marketing and recommendations for
+        apps, music, movies, TV, books, podcasts, Apple Pay, and more.
+      </p>
+      <input type="checkbox" required />
+      <label for="">Agree to Terms & Conditions</label>
+      <p>
+        You acknowledge that you agree to the Apple Media Services Terms &
+        Conditions when you select Continue.
+      </p>
+    </div>
+
+    <div>
+      <button>Back</button>
+      <button>Continue</button>
+    </div>
+  </div>
 
   <script src="script/index.js"></script>
   <script

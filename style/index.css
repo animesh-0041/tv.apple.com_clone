@@ -37,6 +37,7 @@ width: 60%;
 }
 nav>div>a>input::placeholder{
     font-size: 15px;
+    padding-left: .4rem;
 }
 nav>div>button{
     border-radius: 8px;
@@ -534,4 +535,349 @@ border: 1px solid red;
   font-size: .8rem;
   border: 1px solid white;
 }
+
+
+
+/* signin form style */
+#sign-in-btn{
+  cursor: pointer;
+  
+}
+
+
+.sign-in-form-container{
+  color: white;
+  width: 50%;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #262629;
+  border-radius: 5px;
+  z-index: 50;
+  position: absolute;
+  top: -50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+   height: 80vh;
+    
+}
+.sign-in-form-container>div>img{
+  width: 15%;
+  margin: 1rem 0;
+
+}
+.sign-in-form-container>div{
+  text-align: center;
+  width: 50%;
+  margin: auto;
+
+}
+.sign-in-form-container>span{
+ margin: 1.5rem;
+ font-size: 2.5rem;
+ cursor: pointer;
+
+}
+.over-lap{
+  transition: 1s;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 51;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: none;
  
+}
+.active-show-sign-form{
+  top: 50%;
+  transition: .5s;
+  z-index:60;
+}
+.show-over-lap{
+
+  display: block;
+}
+.close-animate{
+  top: -50%;
+  transition: .5s;
+}
+.sign-in-form-container>div>h2{
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.sign-in-form-container>div>p{
+  font-size: .8rem;
+  margin-bottom: 1.5rem;
+}
+.sign-in-form-container>div>input{
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  width: 80%;
+  border: none;
+  height: 2rem;
+  padding: 10px;
+
+}
+.sign-in-form-container>div>div{
+  
+  /* border: 1px solid red; */
+  margin-top: 3rem;
+}
+.sign-in-form-container>:nth-child(2)>div>div{
+padding-bottom: .5rem;
+  /* border: 1px solid red; */
+
+}
+.sign-in-form-container>:nth-child(2)>div>div>a{
+  font-size: .8rem;
+  text-decoration: none;
+  color: #0a84ff;
+}
+.sign-in-form-container>:nth-child(2)>div>div>a:hover{
+  text-decoration: underline;
+}
+
+
+/* sign up form */
+
+
+.sign-up-form-container{
+  color: white;
+  width: 55%;
+  margin: auto;
+  margin-top: .5rem;
+  background-color:rgb(51, 51, 51);;
+  border-radius: 5px;
+  z-index: 50;
+  position: absolute;
+  top: -50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+   height: 80vh;  
+}
+
+
+.sign-up-form-container>div>img{
+  width: 15%;
+  margin: 1rem 0;
+
+}
+.sign-up-form-container>div{
+  text-align: center;
+  width: 50%;
+  margin: auto;
+
+}
+
+.sign-up-form-container>span{
+  margin: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+ 
+ }
+ .over-lap{
+   transition: 1s;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 51;
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   display: none;
+  
+ }
+ .active-show-sign-form{
+   top: 50%;
+   transition: .5s;
+   z-index:60;
+ }
+ .show-over-lap{
+ 
+   display: block;
+ }
+ .close-animate{
+   top: -50%;
+   transition: .5s;
+ }
+ .sign-up-form-container>div>h2{
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+ }
+ .sign-up-form-container>div>p{
+   font-size: .7rem;
+   margin-bottom: 1rem;
+ }
+
+ 
+ .sign-up-form-container>:nth-child(2)>div>div{
+ padding-bottom: .5rem;
+   /* border: 1px solid red; */
+ 
+ }
+ .sign-up-form-container>:nth-child(2)>div>div>a{
+   font-size: .8rem;
+   text-decoration: none;
+   color: #0a84ff;
+ }
+ .sign-up-form-container>:nth-child(2)>div>div>a:hover{
+   text-decoration: underline;
+ }
+ .sign-up-form-container>div>div>div>button{
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  padding: .3rem;
+ }
+.subtn{
+display: flex;
+
+}
+.subtn>:nth-child(1)>button{
+  margin-right: 1rem;
+  background-color: #343f4f;
+  color: white;
+  
+}
+.subtn>:nth-child(2)>button{
+  background-color: #0a84ff;
+  color: white;
+}
+.sign-up-form-container>:nth-child(2)>:nth-child(3){
+  font-size: 1rem;
+  color: gray;
+}
+.sign-up-form-container a{
+  text-decoration: none;
+}
+.sign-up-form-container a:hover{
+  text-decoration: underline;
+}
+
+
+
+.create-apple-id-container{
+  color: white;
+  width: 55%;
+  margin: auto;
+  margin-top: .5rem;
+  background-color:rgb(51, 51, 51);
+  border-radius: 5px;
+  z-index: 50;
+  position: absolute;
+  top: -50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+   height: 80vh;  
+   overflow-y: scroll;
+   
+}
+.create-apple-id-container>span{
+  margin: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+ 
+ }
+ .create-apple-id-container>:nth-child(2)>h2{
+  text-align: center;
+ }
+ .create-apple-id-container>:nth-child(2){
+  width: 75%;
+  margin: auto;
+ }
+ .create-apple-id-container>:nth-child(2) input,select {
+  display: block ;
+  margin: auto;
+  margin-bottom: 2rem ;
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color:#212121 ;
+  color: white;
+  padding-left: 1rem;
+ }
+ .create-apple-id-container>:nth-child(2) >p{
+  margin-top: -1.5rem;
+  font-size: .8rem;
+  color: gray;
+ }
+ .create-apple-id-container>:nth-child(3){
+
+  width: 75%;
+  margin: auto;
+ }
+ .create-apple-id-container>:nth-child(3) p{
+  color: gray;
+  font-size: .7rem;
+ }
+ .create-apple-id-container>:nth-child(4){
+  text-align: right;
+  border-top: 1px solid gray;
+  padding: 1rem 0;
+  z-index: 90;
+ } 
+ .create-apple-id-container>:nth-child(4) button{
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding: 0 1rem;
+ }
+ .create-apple-id-container>:nth-child(4)>:nth-child(1){
+  background-color: rgb(51, 51, 51);
+  color: white;
+ }
+ .create-apple-id-container>:nth-child(4)>:nth-child(2){
+  background-color:#409cff;
+  color: white;
+ }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* medium screen */
+ @media screen and (max-width:768px) and (min-width:321px) {
+  #device-size>:nth-child(5){
+    grid-template-columns: repeat(3,1fr);
+  }
+  #device-size>:nth-child(5)>div>img{
+    width: 100%;
+  }
+}
+/* small screen */
+@media screen and (max-width:420px) and (min-width:250px) {
+  #device-size>:nth-child(5){
+    grid-template-columns: repeat(3,1fr);
+  }
+  #device-avilable>:nth-child(4){
+   flex-direction: column;
+  }
+  #device-size>:nth-child(5)>div>img{
+    width: 100%;
+    
+  }
+  
+}

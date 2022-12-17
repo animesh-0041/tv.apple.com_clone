@@ -67,3 +67,123 @@ nav>div>button{
     text-align: center;
    
 }
+
+/* signin form */
+#sign-in-btn{
+    cursor: pointer;
+    
+  }
+  
+  
+  .sign-in-form-container{
+    color: white;
+    width: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: #262629;
+    border-radius: 5px;
+    z-index: 50;
+    position: absolute;
+    top: -50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+     height: 80vh;
+      
+  }
+  .sign-in-form-container>div>img{
+    width: 15%;
+    margin: 1rem 0;
+  
+  }
+  .sign-in-form-container>div{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  
+  }
+  .sign-in-form-container>span{
+   margin: 1.5rem;
+   font-size: 2.5rem;
+   cursor: pointer;
+  
+  }
+  .over-lap{
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 51;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: none;
+   
+  }
+  .active-show-sign-form{
+    top: 50%;
+    transition: .5s;
+    z-index:60;
+  }
+  .show-over-lap{
+    display: block;
+  }
+  .close-animate{
+    top: -50%;
+    transition: .5s;
+  }
+  .sign-in-form-container>div>h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .sign-in-form-container>div>p{
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+  }
+  .sign-in-form-container>div>input{
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    width: 80%;
+    border: none;
+    height: 2rem;
+    padding: 10px;
+  
+  }
+  .sign-in-form-container>div>div{
+    
+    /* border: 1px solid red; */
+    margin-top: 3rem;
+  }
+  .sign-in-form-container>:nth-child(2)>div>div{
+  padding-bottom: .5rem;
+    /* border: 1px solid red; */
+  
+  }
+  .sign-in-form-container>:nth-child(2)>div>div>a{
+    font-size: .8rem;
+    text-decoration: none;
+    color: #0a84ff;
+
+
+  }
+  .sign-in-form-container>:nth-child(2)>div>div>a:hover{
+    text-decoration: underline;
+  }
+
+
+
+
+
+
+
+
+  @media screen and (max-width:768px) and (min-width:321px) {
+    #movie-grid{
+      grid-template-columns: repeat(3,1fr);
+    }
+    
+  }
+
+  @media screen and (max-width:420px) and (min-width:250px) {
+    #movie-grid{
+      grid-template-columns: repeat(2,1fr);
+    }
+    
+  }
