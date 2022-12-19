@@ -20,12 +20,13 @@ nav>a>img{
     width: 23%;
 }
 nav>div>input{
-    border: 1px solid white;
-    height: 28px;
-    border-radius: 5px;
-    background-color: black;
-    width: 60%;
-    color: white;
+  border: 1px solid white;
+    height: 25px;
+    border-radius: 3px;
+background-color: black;
+color: white;
+width: 60%;
+padding-left: .4rem;
     
     
 }
@@ -33,12 +34,15 @@ nav>div>input::placeholder{
     font-size: 15px;
 }
 nav>div>button{
-    border-radius: 8px;
-    padding:7px 12px;
-   cursor: pointer;
-    background-color: #0a84ff;
-    color: white;
-    font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  padding-top:10px 0;
+  padding-bottom:10px 0;
+  height: 28px;
+ width: 30%;
+  background-color: #0a84ff;
+  color: white;
+  font-size: 13px;
 }
 #container{
     margin-top: 20px;
@@ -74,7 +78,11 @@ nav>div>button{
     
   }
   
-  
+  .arrow{
+    color: white;
+    cursor: pointer;
+    display: block;
+  }
   .sign-in-form-container{
     color: white;
     width: 50%;
@@ -178,12 +186,38 @@ nav>div>button{
     #movie-grid{
       grid-template-columns: repeat(3,1fr);
     }
+    .sign-in-form-container{
+      width: 98%;
+      height: 60vh;
+    }
+    .sign-in-form-container>div{
+      width: 80%;
+      height: 60vh;
+    }
+    nav{
+      justify-content: space-around;
+      padding: .3rem 0.2rem;
+    }
+    
     
   }
 
-  @media screen and (max-width:420px) and (min-width:250px) {
+  @media screen and (max-width:420px) and (min-width:251px) {
     #movie-grid{
       grid-template-columns: repeat(2,1fr);
     }
+    .sign-in-form-container{
+      width: 98%;
+      height: 60vh;
+    }
+    .sign-in-form-container>div{
+      width: 80%;
+      height: 65vh;
+    }
+    nav{
+      justify-content: space-around;
+      padding: .3rem 0.2rem;
+    }
+    
     
   }

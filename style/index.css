@@ -7,6 +7,9 @@
     font-family: 'Poppins', sans-serif;
    
 }
+body::-webkit-scrollbar{
+  display:none;
+}
 body{
     background-color: #212121;
     overflow-x:hidden
@@ -18,7 +21,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 5px 30px;
-    /* position: sticky; */
+    
 
   
   
@@ -28,8 +31,8 @@ nav>a>img{
 }
 nav>div>a>input{
     border: 1px solid white;
-    height: 28px;
-    border-radius: 5px;
+    height: 25px;
+    border-radius: 3px;
 background-color: black;
 width: 60%;
     
@@ -40,9 +43,12 @@ nav>div>a>input::placeholder{
     padding-left: .4rem;
 }
 nav>div>button{
-    border-radius: 8px;
-    padding:7px 12px;
-   
+  border: none;
+    border-radius: 5px;
+    padding-top:10px 0;
+    padding-bottom:10px 0;
+    height: 28px;
+   width: 30%;
     background-color: #0a84ff;
     color: white;
     font-size: 13px;
@@ -60,6 +66,7 @@ nav>div>button{
   padding-bottom: 1.5rem;
 
 }
+
 
 :root {
   --handle-size: 3rem;
@@ -158,7 +165,7 @@ nav>div>button{
   font-size: .8rem;
 }
 .hr{
-  border-bottom: 1px solid gray;
+  border-bottom: .01rem solid gray;
 }
 
 
@@ -282,7 +289,7 @@ nav>div>button{
 
   @media screen and (max-width: 900px) {
     .carousele img {
-      width: calc(100% / 2);
+      width: calc(100% / 1);
     }
   }
 
@@ -513,6 +520,9 @@ border: 1px solid red;
   padding-bottom: 0;
 
 }
+#strat-free-trial h5{
+  font-size: .9rem;
+}
 #strat-free-trial>:nth-child(1)>p{
   color: grey;
 }
@@ -545,6 +555,7 @@ border: 1px solid red;
 }
 
 
+
 .sign-in-form-container{
   color: white;
   width: 50%;
@@ -558,6 +569,7 @@ border: 1px solid red;
   left:50%;
   transform: translate(-50%,-50%);
    height: 80vh;
+ 
     
 }
 .sign-in-form-container>div>img{
@@ -591,6 +603,8 @@ border: 1px solid red;
   top: 50%;
   transition: .5s;
   z-index:60;
+ 
+  
 }
 .show-over-lap{
 
@@ -641,6 +655,7 @@ padding-bottom: .5rem;
 
 
 .sign-up-form-container{
+  display: none;
   color: white;
   width: 55%;
   margin: auto;
@@ -649,12 +664,18 @@ padding-bottom: .5rem;
   border-radius: 5px;
   z-index: 50;
   position: absolute;
-  top: -50%;
+  top: 50%;
   left:50%;
   transform: translate(-50%,-50%);
-   height: 80vh;  
-}
+   height: 80vh; 
+  /* opacity: 0; */
 
+}
+.arrow{
+  color: white;
+  cursor: pointer;
+  display: block;
+}
 
 .sign-up-form-container>div>img{
   width: 15%;
@@ -663,7 +684,7 @@ padding-bottom: .5rem;
 }
 .sign-up-form-container>div{
   text-align: center;
-  width: 50%;
+  width: 60%;
   margin: auto;
 
 }
@@ -685,12 +706,13 @@ padding-bottom: .5rem;
   
  }
  .active-show-sign-form{
-   top: 50%;
-   transition: .5s;
+  transition: 1s;
    z-index:60;
+ display: block;
+   opacity: 1;
  }
  .show-over-lap{
- 
+
    display: block;
  }
  .close-animate{
@@ -728,6 +750,7 @@ padding-bottom: .5rem;
  }
 .subtn{
 display: flex;
+justify-content: center;
 
 }
 .subtn>:nth-child(1)>button{
@@ -751,7 +774,9 @@ display: flex;
   text-decoration: underline;
 }
 
-
+.create-apple-id-container::-webkit-scrollbar{
+  display:none;
+}
 
 .create-apple-id-container{
   color: white;
@@ -762,27 +787,30 @@ display: flex;
   border-radius: 5px;
   z-index: 50;
   position: absolute;
-  top: -50%;
+  top: 50%;
   left:50%;
   transform: translate(-50%,-50%);
    height: 80vh;  
    overflow-y: scroll;
+   display: block;
+   opacity: 0;
    
 }
 .create-apple-id-container>span{
-  margin: 1rem;
+  padding-left: 1.5rem;
   font-size: 2.5rem;
   cursor: pointer;
+  /* border: 1px solid red; */
  
  }
  .create-apple-id-container>:nth-child(2)>h2{
   text-align: center;
  }
- .create-apple-id-container>:nth-child(2){
+ .create-apple-id-container>:nth-child(1){
   width: 75%;
   margin: auto;
  }
- .create-apple-id-container>:nth-child(2) input,select {
+ .create-id-input {
   display: block ;
   margin: auto;
   margin-bottom: 2rem ;
@@ -793,43 +821,122 @@ display: flex;
   background-color:#212121 ;
   color: white;
   padding-left: 1rem;
+ 
  }
- .create-apple-id-container>:nth-child(2) >p{
+ .create-apple-id-container>:nth-child(1) >p{
   margin-top: -1.5rem;
   font-size: .8rem;
   color: gray;
  }
- .create-apple-id-container>:nth-child(3){
+ .create-apple-id-container>:nth-child(2){
 
   width: 75%;
   margin: auto;
  }
- .create-apple-id-container>:nth-child(3) p{
+ .create-apple-id-container>:nth-child(2) p{
   color: gray;
   font-size: .7rem;
  }
- .create-apple-id-container>:nth-child(4){
+ .create-apple-id-container>:nth-child(3){
   text-align: right;
   border-top: 1px solid gray;
   padding: 1rem 0;
   z-index: 90;
  } 
- .create-apple-id-container>:nth-child(4) button{
+ .create-apple-id-container>:nth-child(3) button{
   width: 8rem;
   height: 2.5rem;
   border-radius: 5px;
   border: none;
   padding: 0 1rem;
  }
- .create-apple-id-container>:nth-child(4)>:nth-child(1){
+ .create-apple-id-container>:nth-child(3)>:nth-child(1){
   background-color: rgb(51, 51, 51);
   color: white;
  }
- .create-apple-id-container>:nth-child(4)>:nth-child(2){
+ .create-apple-id-container>:nth-child(3)>:nth-child(2){
   background-color:#409cff;
   color: white;
  }
+ .active-create-account-form-show{
+  transition: 1s;
+  z-index:60;
+  
+  opacity: 1;
+  display: block;
+ }
 
+ .payment::-webkit-scrollbar{
+  display:none;
+}
+
+ /* payment page style here */
+ .payment{
+   color: white;
+  width: 55%;
+  margin: auto;
+  margin-top: .5rem;
+  background-color:rgb(51, 51, 51);
+  border-radius:10px;
+  z-index: 50;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+   height: 80vh;  
+   overflow-y: scroll;
+     padding: 2rem 0;
+     opacity: 0;
+     display:none;
+    
+ }
+
+ .payment>div>h2{
+  text-align: center;
+ }
+ .payment>div{
+  width: 80%;
+  margin: auto;
+ }
+ .payment>div input{
+    display: block ;
+  margin: auto;
+  margin-bottom: 2rem ;
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  background-color:#212121 ;
+  color: white;
+  padding-left: 1rem;
+
+ }
+
+ #subscribe{
+  width: 30%;
+  display: block;
+  margin: auto;
+  height: 3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0a84ff;
+  color: white;
+  font-size: 1.2;
+
+ }
+ .payment-page-show{
+  /* top: 50%; */
+  display: block;
+  opacity: 1;
+  transition: 1s;
+  z-index:60;
+
+ }
+ #close4{
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+ }
  
 
 
@@ -866,6 +973,39 @@ display: flex;
   #device-size>:nth-child(5)>div>img{
     width: 100%;
   }
+  .sign-in-form-container{
+    width: 98%;
+    height: 60vh;
+  }
+  .sign-in-form-container>div{
+    width: 80%;
+    height: 60vh;
+  }
+  nav{
+    justify-content: space-around;
+    padding: .3rem 0.2rem;
+  }
+  .subtn{
+    display: flex;
+  }
+  .sign-up-form-container{
+    width: 98%;
+  }
+  .sign-up-form-container>div{ 
+    width: 90%;
+  }
+  .sign-up-form-container{
+    height: 45vh;
+  }
+  .remove{
+    display: none;
+  }
+  #device-size>:first-child{
+    width: 20%;
+    
+  }
+
+
 }
 /* small screen */
 @media screen and (max-width:420px) and (min-width:250px) {
@@ -877,6 +1017,43 @@ display: flex;
   }
   #device-size>:nth-child(5)>div>img{
     width: 100%;
+    
+  }
+  .sign-in-form-container{
+    width: 98%;
+    height: 60vh;
+  }
+  .sign-in-form-container>div{
+    width: 80%;
+    height: 65vh;
+  }
+
+  nav{
+    justify-content: space-around;
+    padding: .3rem 0.2rem;
+  }
+  .sign-up-form-container>div{ 
+    width: 90%;
+  }
+  .sign-up-form-container{
+    height: 60vh;
+  }
+  .remove{
+    display: none;
+  }
+  #faq{
+    width: 80%;
+    margin: auto;
+  }
+  #device-size{
+    width: 80%;
+  }
+  #device-avilable{
+    width: 100%;
+  }
+ 
+  #device-size>:first-child{
+    width: 20%;
     
   }
   

@@ -73,7 +73,30 @@ function close() {
 }
 
 
-
+// signin form
+let getdataArray = JSON.parse(localStorage.getItem("apple-id")) || [];
+let signEmail = document.getElementById("sign-email");
+let signPassword = document.getElementById("sign-password");
+let submit = document.querySelector(".arrow");
+submit.addEventListener("click", () => {
+  signinWithAppleID();
+});
+function signinWithAppleID() {
+  let c = 0;
+  getdataArray.forEach((e) => {
+    if (signEmail.value == e.email && signPassword.value == e.password) {
+      c = 1;
+    }
+  });
+  if (c == 1) {
+    alert("SignIn Successful");
+    cross();
+  } else {
+    alert("Invalid Apple ID and Password");
+    signEmail.value = "";
+    signPassword.value = "";
+  }
+}
 
 
 
